@@ -33,7 +33,6 @@
     overflow-x: hidden;
     cursor: none;
   }
-
   /* ── CUSTOM CURSOR ── */
   #cursor {
     position: fixed; top: 0; left: 0; width: 12px; height: 12px;
@@ -50,8 +49,11 @@
     opacity: 0.5;
   }
   body:hover #cursor { opacity: 1; }
-
-  /* ── LOADER ── */
+  @media (hover: none) {
+    #cursor, #cursor-follower { display: none; }
+    body { cursor: auto; }
+  }
+/* ── LOADER ── */
   #loader {
     position: fixed; inset: 0; background: var(--black); z-index: 10000;
     display: flex; align-items: center; justify-content: center;
